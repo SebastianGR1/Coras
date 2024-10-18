@@ -1,178 +1,211 @@
+/* Reset CSS */
+
 * {
-    padding: 0;
-    margin: 0;
+    min-width: 0;
+    font: inherit;
+  }
+  
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #222f3e;
-    overflow: hidden; /* Evita el desbordamiento */
-}
-
-.container {
+  }
+  
+  img,
+  video,
+  svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100dvh;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+  
+  /* Estilos generales */
+  body {
+    background-color: #fad7df;
+  }
+  
+  main {
     display: flex;
     flex-direction: column;
+    gap: 3rem; /* Espaciado para PC */
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    padding: 1rem; /* Espaciado añadido */
+  }
+  
+  .container-letter {
     position: relative;
-}
-
-.heart {
-    position: fixed; /* Mantiene el corazón grande fijo */
-    width: 220px;
-    height: 220px;
-    background: #ff4757;
-    transform: rotate(-45deg);
-    box-shadow: -10px 10px 90px #ff4757;
-    animation: animate 0.6s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    top: 300px;
-}
-
-@keyframes animate {
-    0% {
-        transform: rotate(-45deg) scale(1.07);
-    }
-    80% {
-        transform: rotate(-45deg) scale(1.0);
-    }
-    100% {
-        transform: rotate(-45deg) scale(1.07);
-    }
-}
-
-.heart::before,
-.heart::after {
-    content: '';
+  }
+  
+  .cover {
     position: absolute;
-    width: 220px;
-    height: 220px;
-    background: #ff4757;
-    border-radius: 50%;
-    box-shadow: -10px 10px 90px #ff4757;
-}
-
-.heart::before {
-    top: -50%;
-    left: 0;
-}
-
-.heart::after {
-    right: -50%;
-    top: 0;
-}
-
-.small-heart {
-    position: absolute;
-    width: 60px; /* Tamaño pequeño */
-    height: 60px; /* Tamaño pequeño */
-    background: #ff4757;
-    transform: rotate(-45deg);
-    box-shadow: -5px 5px 30px #ff4757;
-    animation: smallAnimate 0.6s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-}
-
-.small-heart::before,
-.small-heart::after {
-    content: '';
-    position: absolute;
-    width: 60px; /* Tamaño pequeño */
-    height: 60px; /* Tamaño pequeño */
-    background: #ff4757;
-    border-radius: 50%;
-    box-shadow: -5px 5px 30px #ff4757;
-}
-
-.small-heart::before {
-    top: -30%; /* Ajustar para formar corazón */
-    left: 0;
-}
-
-.small-heart::after {
-    left: 30%; /* Ajustar para formar corazón */
-}
-
-/* Ajustando posiciones para que estén aún más lejos */
-/* Corazones arriba */
-.small-heart1 { position: absolute; top: -300px; left: 100px; }
-.small-heart2 { position: absolute; top: -300px; left: 200px; }
-.small-heart3 { position: absolute; top: -300px; left: 300px; }
-.small-heart4 { position: absolute; top: -300px; left: 400px; }
-.small-heart5 { position: absolute; top: -300px; left: 500px; }
-.small-heart6 { position: absolute; top: -300px; right: 100px; }
-.small-heart7 { position: absolute; top: -300px; right: 200px; }
-.small-heart8 { position: absolute; top: -300px; right: 300px; }
-.small-heart9 { position: absolute; top: -300px; right: 400px; }
-.small-heart10 { position: absolute; top: -300px; right: 500px; }
-
-/* Corazones abajo */
-.small-heart11 { position: absolute; top: 240px; left: 100px; }
-.small-heart12 { position: absolute; top: 240px; left: 200px; }
-.small-heart13 { position: absolute; top: 240px; left: 300px; }
-.small-heart14 { position: absolute; top: 240px; left: 400px; }
-.small-heart15 { position: absolute; top: 240px; left: 500px; }
-.small-heart16 { position: absolute; top: 240px; right: 100px; }
-.small-heart17 { position: absolute; top: 240px; right: 200px; }
-.small-heart18 { position: absolute; top: 240px; right: 300px; }
-.small-heart19 { position: absolute; top: 240px; right: 400px; }
-.small-heart20 { position: absolute; top: 240px; right: 500px; }
-
-/* Corazón en medio */
-.small-heart-center1 { position: absolute; top: 240px; left: 1; } /* Ajusta la posición según sea necesario */
-.small-heart-center2 { position: absolute; top: -300px; left: 1; }
-
-
-
-
-
-@keyframes smallAnimate {
-    0% {
-        transform: rotate(-45deg) scale(1.07);
-    }
-    80% {
-        transform: rotate(-45deg) scale(1.0);
-    }
-    100% {
-        transform: rotate(-45deg) scale(1.07);
-    }
-}
-
-.contenido {
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 250px solid #fe3334;
+    border-bottom: 250px solid transparent;
+    transition: transform 0.75s;
+    transform-origin: top;
+  }
+  
+  .paper {
     position: fixed;
-    text-align: center;
-    font-size: 24px;
-    top: 300px;
-}
+    padding: 2rem;
+    line-height: 1.5rem;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    background: #F29DAB;
+    border: 4px solid #ffd700;
+    border-radius: 20px;
+    width: 500px;
+    height: 300px;
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+    transform: translate(-50%, -50%) translateY(400px);
+    pointer-events: none; 
+  }
 
-h1, h2 {
+  .paper{
     color: white;
-}
-
-@media (max-width: 600px) {
-    .heart {
-        width: 150px;
-        height: 150px;
+    font-size: 20px;
+  }
+  
+  .open-paper {
+    opacity: 1;
+    pointer-events: auto; 
+  }
+  
+  .letter {
+    border-left: 300px solid #ff989e; 
+    border-right: 300px solid #ff989e;
+    border-top: 250px solid transparent;
+    border-bottom: 200px solid #ff858a;
+  }
+  
+  .options {
+    display: flex;
+    gap: 5rem;
+  
+    & button {
+      color: #ff3234;
+      font-weight: 600;
+      border-radius: 3px;
+      background: #fad7df;
+      padding: 0.5rem 1rem;
+      border: 1px solid #fe3334;
+      cursor: pointer;
     }
-    .small-heart {
-        width: 50px;
-        height: 50px;
+  
+    & button:hover {
+      background: #ff989e;
+      color: white;
     }
-    .contenido {
-        font-size: 20px;
+  }
+  
+  .open-cover {
+    transform: rotatex(180deg);
+  }
+  
+  .open-paper {
+    animation: openPaper 5s forwards;
+  }
+  
+  @keyframes openPaper {
+    0% {
+      top: 0;
     }
-}
+    100% {
+      top: -120px;
+    }
+  }
+  
+  .close-paper {
+    animation: closePaper .5s forwards;
+  }
+  
+  @keyframes closePaper {
+    0% {
+      top: -120px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  .heart {
+    display: none;
+    position: absolute;
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
+    font-size: 2rem;
+    color: #fe3334;
+    animation: crecer 2s forwards;
+  }
+  
+  
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+    }
+  }
+  
+  /* Media Queries para móvil */
+  @media (max-width: 768px) {
+    main {
+      gap: 2rem; /* Espaciado para móvil */
+    }
+  
+    .cover {
+      border-left: 150px solid transparent; /* Ajustado para móvil */
+      border-right: 150px solid transparent; /* Ajustado para móvil */
+      border-top: 120px solid #fe3334; /* Ajustado para móvil */
+      border-bottom: 120px solid transparent; /* Ajustado para móvil */
+    }
+  
+    .paper {
+      padding: 1.5rem; /* Ajustado para mejor espaciado */
+      width: 90%; /* Ajustado para ser responsivo */
+      max-width: 500px; /* Mantener max-width */
+      height: auto; /* Altura dinámica */
+    }
+  
+    .letter {
+      border-left: 150px solid #ff989e; /* Ajustado para móvil */
+      border-right: 150px solid #ff989e; /* Ajustado para móvil */
+      border-top: 120px solid transparent; /* Ajustado para móvil */
+      border-bottom: 100px solid #ff858a; /* Ajustado para móvil */
+    }
+  
+    .options {
+      flex-direction: column; /* Botones apilados para móvil */
+      gap: 1rem; /* Espaciado ajustado */
+    }
+  
+    .options button {
+      width: 100%; /* Botones de ancho completo */
+      padding: 0.75rem; /* Espaciado ajustado */
+    }
+  }
+  
